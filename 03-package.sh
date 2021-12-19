@@ -4,9 +4,16 @@
 # Requires ccrypt.
 
 dir=output/result
-sound_password="r0ckrobo#23456"
+sound_password="this_is_a_password" # This value doesn't matter because it does not provide any security.
 
 mkdir -p $dir
 
 cd $dir
 tar zc *.wav | ccrypt -e -K "$sound_password" > voicepack.pkg
+
+# Clean up.
+mv voicepack.pkg ..
+rm -rf $dir
+
+# Inform the user that the packaging is complete.
+echo "Packaging complete. The voicepack.pkg file is located in the output directory."

@@ -3,8 +3,8 @@
 # Run this script to generate wav files in GLaDOS' voice based on the lines in the input csv.
 # Existing files are not overwritten. Requires curl.
 
-inputfile=audio_default.csv
-outputdir=output/speech
+inputfile=$1 # The input csv file.
+outputdir=output/speech # The output directory.
 
 mkdir -p $outputdir
 
